@@ -85,6 +85,7 @@
 		10B9304E28C6CB420076E462 /* Pharmacy */ = {
 			isa = PBXGroup;
 			children = (
+				10B9307128C6D4A80076E462 /* Pharmacy.pch */,
 				10B9307028C6D4300076E462 /* Pharmacy Library */,
 				10B9306F28C6CC000076E462 /* Controller */,
 				10B9306E28C6CBF30076E462 /* View */,
@@ -146,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				10B9307928C6DAD50076E462 /* Categories */,
-				10B9307128C6D4A80076E462 /* Pharmacy.pch */,
 				10B9307228C6D66A0076E462 /* PharmacyHttpClient.h */,
 				10B9307328C6D66A0076E462 /* PharmacyHttpClient.m */,
 				10B9307A28C6DC750076E462 /* PharmacyAlert.h */,
@@ -438,6 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9HZ35W2BL;
+				GCC_PREFIX_HEADER = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pharmacy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,6 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9HZ35W2BL;
+				GCC_PREFIX_HEADER = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pharmacy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

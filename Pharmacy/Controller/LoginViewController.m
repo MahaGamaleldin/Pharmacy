@@ -8,7 +8,6 @@
 #import "LoginViewController.h"
 #import "PharmacyAlert.h"
 #import "PharmacyHttpClient.h"
-
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldUserName;
@@ -21,6 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSString *savedValue = [[NSUserDefaults standardUserDefaults]
+        stringForKey:kUserLoginToken];
+    NSLog(@"saved token: %@",savedValue);
 }
 
 /*
@@ -58,10 +61,11 @@
 }
 
 - (void) login {
-    
-    [PharmacyHttpClient loginWithUserName:self.textFieldUserName.text password:self.textFieldPassword.text completion:^(id responseObject, NSString *errorMessage) {
+    PharmacyHttpClient *client = [PharmacyHttpClient new];
+    [client loginWithUserName:@"ghazala" password:@"ghazala123" completion:^(id responseObject, NSString *errorMessage) {
         if(responseObject) {
-            NSLog(@"login responseObject: %@",responseObject);
+            NSString *token = responseObject[@"token"];
+            [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserLoginToken];
         } else {
             [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
 
