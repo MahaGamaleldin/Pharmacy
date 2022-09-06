@@ -14,6 +14,9 @@
 		10B9305F28C6CB440076E462 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B9305E28C6CB440076E462 /* Assets.xcassets */; };
 		10B9306228C6CB440076E462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B9306028C6CB440076E462 /* LaunchScreen.storyboard */; };
 		10B9306528C6CB440076E462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B9306428C6CB440076E462 /* main.m */; };
+		10B9307428C6D66A0076E462 /* PharmacyHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B9307328C6D66A0076E462 /* PharmacyHttpClient.m */; };
+		10B9307728C6D8430076E462 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B9307628C6D8430076E462 /* LoginViewController.m */; };
+		10B9307C28C6DC760076E462 /* PharmacyAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B9307B28C6DC760076E462 /* PharmacyAlert.m */; };
 		155B0E133983173E2C723AFD /* Pods_Pharmacy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72976B30598CFCC0DF2CC8DA /* Pods_Pharmacy.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,13 @@
 		10B9306128C6CB440076E462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10B9306328C6CB440076E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10B9306428C6CB440076E462 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		10B9307128C6D4A80076E462 /* Pharmacy.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pharmacy.pch; sourceTree = "<group>"; };
+		10B9307228C6D66A0076E462 /* PharmacyHttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PharmacyHttpClient.h; sourceTree = "<group>"; };
+		10B9307328C6D66A0076E462 /* PharmacyHttpClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PharmacyHttpClient.m; sourceTree = "<group>"; };
+		10B9307528C6D8430076E462 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		10B9307628C6D8430076E462 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		10B9307A28C6DC750076E462 /* PharmacyAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PharmacyAlert.h; sourceTree = "<group>"; };
+		10B9307B28C6DC760076E462 /* PharmacyAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PharmacyAlert.m; sourceTree = "<group>"; };
 		72976B30598CFCC0DF2CC8DA /* Pods_Pharmacy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pharmacy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B664760465F4D3DCB07D6CDE /* Pods-Pharmacy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharmacy.release.xcconfig"; path = "Target Support Files/Pods-Pharmacy/Pods-Pharmacy.release.xcconfig"; sourceTree = "<group>"; };
 		D5EE9009DF0989E95EFCDEDE /* Pods-Pharmacy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pharmacy.debug.xcconfig"; path = "Target Support Files/Pods-Pharmacy/Pods-Pharmacy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,6 +85,7 @@
 		10B9304E28C6CB420076E462 /* Pharmacy */ = {
 			isa = PBXGroup;
 			children = (
+				10B9307028C6D4300076E462 /* Pharmacy Library */,
 				10B9306F28C6CC000076E462 /* Controller */,
 				10B9306E28C6CBF30076E462 /* View */,
 				10B9306D28C6CBE00076E462 /* Model */,
@@ -125,8 +136,30 @@
 		10B9306F28C6CC000076E462 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				10B9307528C6D8430076E462 /* LoginViewController.h */,
+				10B9307628C6D8430076E462 /* LoginViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		10B9307028C6D4300076E462 /* Pharmacy Library */ = {
+			isa = PBXGroup;
+			children = (
+				10B9307928C6DAD50076E462 /* Categories */,
+				10B9307128C6D4A80076E462 /* Pharmacy.pch */,
+				10B9307228C6D66A0076E462 /* PharmacyHttpClient.h */,
+				10B9307328C6D66A0076E462 /* PharmacyHttpClient.m */,
+				10B9307A28C6DC750076E462 /* PharmacyAlert.h */,
+				10B9307B28C6DC760076E462 /* PharmacyAlert.m */,
+			);
+			path = "Pharmacy Library";
+			sourceTree = "<group>";
+		};
+		10B9307928C6DAD50076E462 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		8EF1F48459C5F21BB91446BC /* Pods */ = {
@@ -135,7 +168,6 @@
 				D5EE9009DF0989E95EFCDEDE /* Pods-Pharmacy.debug.xcconfig */,
 				B664760465F4D3DCB07D6CDE /* Pods-Pharmacy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -255,8 +287,11 @@
 			files = (
 				10B9306528C6CB440076E462 /* main.m in Sources */,
 				10B9305128C6CB420076E462 /* AppDelegate.m in Sources */,
+				10B9307728C6D8430076E462 /* LoginViewController.m in Sources */,
+				10B9307428C6D66A0076E462 /* PharmacyHttpClient.m in Sources */,
 				10B9305D28C6CB420076E462 /* Pharmacy.xcdatamodeld in Sources */,
 				10B9305428C6CB420076E462 /* SceneDelegate.m in Sources */,
+				10B9307C28C6DC760076E462 /* PharmacyAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
