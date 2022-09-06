@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 extern NSString * const kUserLoginToken;
 
 typedef void(^PharmacyCompletionBlock)(id responseObject, NSString *errorMessage);

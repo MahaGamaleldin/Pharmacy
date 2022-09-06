@@ -8,6 +8,8 @@
 #import "LoginViewController.h"
 #import "PharmacyAlert.h"
 #import "PharmacyHttpClient.h"
+#import "PharmaciesViewController.h"
+
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldUserName;
@@ -21,11 +23,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSString *savedValue = [[NSUserDefaults standardUserDefaults]
-        stringForKey:kUserLoginToken];
-    NSLog(@"saved token: %@",savedValue);
+   
 }
 
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -66,11 +72,19 @@
         if(responseObject) {
             NSString *token = responseObject[@"token"];
             [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserLoginToken];
+            [self goToPharmaciesViewControllerAnimated];
         } else {
             [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
 
         }
     }];
+}
+
+- (void) goToPharmaciesViewControllerAnimated{
+    
+    UINavigationController *pharmaciesNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"PharmaciesNavigationController"];
+    pharmaciesNavigationController.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:pharmaciesNavigationController animated:YES completion:nil];
 }
 
 @end

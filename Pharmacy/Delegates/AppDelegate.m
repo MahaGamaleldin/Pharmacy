@@ -6,6 +6,8 @@
 //
 
 #import "AppDelegate.h"
+#import "PharmacyHttpClient.h"
+#import "PharmaciesViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    if ([[NSUserDefaults standardUserDefaults] stringForKey:kUserLoginToken]) {
+//        UINavigationController *navigationController = (UINavigationController *) [self.window rootViewController];
+//        PharmaciesViewController *
+//        
+//    }
+    
+    
     return YES;
 }
 

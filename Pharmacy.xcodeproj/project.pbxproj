@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1055B60F28C7F11000321EFD /* PharmaciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B60E28C7F11000321EFD /* PharmaciesViewController.m */; };
+		1055B61228C7F71100321EFD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B61128C7F71100321EFD /* FirstViewController.m */; };
 		10B9305128C6CB420076E462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B9305028C6CB420076E462 /* AppDelegate.m */; };
 		10B9305428C6CB420076E462 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B9305328C6CB420076E462 /* SceneDelegate.m */; };
 		10B9305A28C6CB420076E462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B9305828C6CB420076E462 /* Main.storyboard */; };
@@ -21,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1055B60D28C7F11000321EFD /* PharmaciesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PharmaciesViewController.h; sourceTree = "<group>"; };
+		1055B60E28C7F11000321EFD /* PharmaciesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PharmaciesViewController.m; sourceTree = "<group>"; };
+		1055B61028C7F71100321EFD /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		1055B61128C7F71100321EFD /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		10B9304C28C6CB420076E462 /* Pharmacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pharmacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B9304F28C6CB420076E462 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		10B9305028C6CB420076E462 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,6 +145,10 @@
 			children = (
 				10B9307528C6D8430076E462 /* LoginViewController.h */,
 				10B9307628C6D8430076E462 /* LoginViewController.m */,
+				1055B60D28C7F11000321EFD /* PharmaciesViewController.h */,
+				1055B60E28C7F11000321EFD /* PharmaciesViewController.m */,
+				1055B61028C7F71100321EFD /* FirstViewController.h */,
+				1055B61128C7F71100321EFD /* FirstViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B9306528C6CB440076E462 /* main.m in Sources */,
+				1055B61228C7F71100321EFD /* FirstViewController.m in Sources */,
+				1055B60F28C7F11000321EFD /* PharmaciesViewController.m in Sources */,
 				10B9305128C6CB420076E462 /* AppDelegate.m in Sources */,
 				10B9307728C6D8430076E462 /* LoginViewController.m in Sources */,
 				10B9307428C6D66A0076E462 /* PharmacyHttpClient.m in Sources */,
