@@ -7,7 +7,9 @@
 
 #import "PharmaciesViewController.h"
 
-@interface PharmaciesViewController ()
+@interface PharmaciesViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableViewPharmacies;
 
 @end
 
@@ -18,6 +20,21 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    PharmacyHttpClient *client = [PharmacyHttpClient sharedInstance];
+    [client getAllPharmaciesWithCompletion:^(id responseObject, NSString *errorMessage) {
+        if(responseObject) {
+           
+        } else {
+            [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
+            printf("---error----");
+            NSLog(@"%@",errorMessage);
+        }
+    }];
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -27,5 +44,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark: UITableViewDataSource, UITableViewDelegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PharmaciesTableViewCell"];
+    //delete + button from ui
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 @end

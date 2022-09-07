@@ -6,8 +6,6 @@
 //
 
 #import "LoginViewController.h"
-#import "PharmacyAlert.h"
-#import "PharmacyHttpClient.h"
 #import "PharmaciesViewController.h"
 
 @interface LoginViewController ()
@@ -67,11 +65,12 @@
 }
 
 - (void) login {
-    PharmacyHttpClient *client = [PharmacyHttpClient new];
+    PharmacyHttpClient *client = [PharmacyHttpClient sharedInstance];
     [client loginWithUserName:@"ghazala" password:@"ghazala123" completion:^(id responseObject, NSString *errorMessage) {
         if(responseObject) {
             NSString *token = responseObject[@"token"];
             [[NSUserDefaults standardUserDefaults] setObject:token forKey:kUserLoginToken];
+            [client addUserTokenToSession];
             [self goToPharmaciesViewControllerAnimated];
         } else {
             [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];

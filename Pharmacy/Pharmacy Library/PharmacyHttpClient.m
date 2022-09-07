@@ -10,16 +10,29 @@
 #import "AFNetworking.h"
 
 NSString * const kUserLoginToken = @"userLoginToken";
+NSString * const kHTTPHeaderAuthorizationkey = @"Authorization";
 
 @interface PharmacyHttpClient ()
 
 {
+    
 }
+
 @property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
 
 @end
 
 @implementation PharmacyHttpClient
+
++ (instancetype) sharedInstance {
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once( &pred, ^{
+        _sharedObject = [[self alloc] init];
+    });
+    
+return _sharedObject;
+}
 
 - (instancetype)init
 {
@@ -28,14 +41,24 @@ NSString * const kUserLoginToken = @"userLoginToken";
     if (self) {
         _sessionManager = [[AFHTTPSessionManager alloc] init];
         _sessionManager.requestSerializer = [[AFJSONRequestSerializer alloc] init];
+        [self addUserTokenToSession];
     }
     return self;
 }
 
+- (void) addUserTokenToSession {
+    NSString *userLoginToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserLoginToken];
+    if(userLoginToken != nil) {
+        [_sessionManager.requestSerializer setValue:userLoginToken forHTTPHeaderField:kHTTPHeaderAuthorizationkey];
+        NSLog(@"\n----added token: %@\n",userLoginToken);
+    }
+}
+
+
 - (NSString *)getUrlForResource:(NSString *)resource {
     NSString *baseUrl = @"https://portal-test.rxmaxreturns.com/rxmax";
     NSString *url = [NSString stringWithFormat:@"%@%@",baseUrl,resource];
-    NSLog(@"url: %@",url);
+    NSLog(@"----url: %@",url);
     return  url;
 }
 
@@ -54,13 +77,23 @@ NSString * const kUserLoginToken = @"userLoginToken";
 
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
- 
         if (completion) completion(nil, error.description);
-
-        
     }];
     
 }
 
+-(void)getAllPharmaciesWithCompletion:(PharmacyCompletionBlock)completion {
+    [self.sessionManager GET:[self getUrlForResource:@"/pharmacies"] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        printf("\n----pharmacies----\n");
+        NSLog(@"%@",responseObject);
+        printf("\n----------------------------------\n");
+        if (completion) completion(responseObject, nil);
+
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        if (completion) completion(nil, error.description);
+    }];
+}
 
 @end

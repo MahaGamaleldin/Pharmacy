@@ -8,7 +8,7 @@
 #import "FirstViewController.h"
 #import "LoginViewController.h"
 #import "PharmaciesViewController.h"
-#import "PharmacyHttpClient.h"
+
 
 @interface FirstViewController ()
 

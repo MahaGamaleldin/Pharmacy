@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		1055B60F28C7F11000321EFD /* PharmaciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B60E28C7F11000321EFD /* PharmaciesViewController.m */; };
 		1055B61228C7F71100321EFD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B61128C7F71100321EFD /* FirstViewController.m */; };
+		1055B61528C80AB900321EFD /* Pharmacy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B61428C80AB900321EFD /* Pharmacy.m */; };
+		1055B61828C80B7A00321EFD /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B61728C80B7A00321EFD /* Item.m */; };
+		1055B61B28C80BCE00321EFD /* Wholesaler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B61A28C80BCE00321EFD /* Wholesaler.m */; };
+		1055B61E28C80BEF00321EFD /* ReturnRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B61D28C80BEF00321EFD /* ReturnRequest.m */; };
+		1055B62128C80D9E00321EFD /* ReturnRequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B62028C80D9E00321EFD /* ReturnRequestsViewController.m */; };
+		1055B62428C815D300321EFD /* ReturnRequestsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B62328C815D300321EFD /* ReturnRequestsTableViewCell.m */; };
+		1055B62A28C81DFE00321EFD /* ItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B62928C81DFE00321EFD /* ItemsTableViewController.m */; };
+		1055B62D28C820F500321EFD /* CreateReturnRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B62C28C820F500321EFD /* CreateReturnRequestViewController.m */; };
+		1055B63028C8215400321EFD /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B62F28C8215400321EFD /* AddItemViewController.m */; };
 		10B9305128C6CB420076E462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B9305028C6CB420076E462 /* AppDelegate.m */; };
 		10B9305428C6CB420076E462 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B9305328C6CB420076E462 /* SceneDelegate.m */; };
 		10B9305A28C6CB420076E462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B9305828C6CB420076E462 /* Main.storyboard */; };
@@ -27,6 +36,24 @@
 		1055B60E28C7F11000321EFD /* PharmaciesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PharmaciesViewController.m; sourceTree = "<group>"; };
 		1055B61028C7F71100321EFD /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		1055B61128C7F71100321EFD /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		1055B61328C80AB800321EFD /* Pharmacy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pharmacy.h; sourceTree = "<group>"; };
+		1055B61428C80AB900321EFD /* Pharmacy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pharmacy.m; sourceTree = "<group>"; };
+		1055B61628C80B7A00321EFD /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		1055B61728C80B7A00321EFD /* Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		1055B61928C80BCE00321EFD /* Wholesaler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wholesaler.h; sourceTree = "<group>"; };
+		1055B61A28C80BCE00321EFD /* Wholesaler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wholesaler.m; sourceTree = "<group>"; };
+		1055B61C28C80BEF00321EFD /* ReturnRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnRequest.h; sourceTree = "<group>"; };
+		1055B61D28C80BEF00321EFD /* ReturnRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReturnRequest.m; sourceTree = "<group>"; };
+		1055B61F28C80D9E00321EFD /* ReturnRequestsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnRequestsViewController.h; sourceTree = "<group>"; };
+		1055B62028C80D9E00321EFD /* ReturnRequestsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReturnRequestsViewController.m; sourceTree = "<group>"; };
+		1055B62228C815D300321EFD /* ReturnRequestsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnRequestsTableViewCell.h; sourceTree = "<group>"; };
+		1055B62328C815D300321EFD /* ReturnRequestsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReturnRequestsTableViewCell.m; sourceTree = "<group>"; };
+		1055B62828C81DFE00321EFD /* ItemsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsTableViewController.h; sourceTree = "<group>"; };
+		1055B62928C81DFE00321EFD /* ItemsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemsTableViewController.m; sourceTree = "<group>"; };
+		1055B62B28C820F500321EFD /* CreateReturnRequestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateReturnRequestViewController.h; sourceTree = "<group>"; };
+		1055B62C28C820F500321EFD /* CreateReturnRequestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateReturnRequestViewController.m; sourceTree = "<group>"; };
+		1055B62E28C8215400321EFD /* AddItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		1055B62F28C8215400321EFD /* AddItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 		10B9304C28C6CB420076E462 /* Pharmacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pharmacy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B9304F28C6CB420076E462 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		10B9305028C6CB420076E462 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,6 +156,14 @@
 		10B9306D28C6CBE00076E462 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1055B61328C80AB800321EFD /* Pharmacy.h */,
+				1055B61428C80AB900321EFD /* Pharmacy.m */,
+				1055B61628C80B7A00321EFD /* Item.h */,
+				1055B61728C80B7A00321EFD /* Item.m */,
+				1055B61928C80BCE00321EFD /* Wholesaler.h */,
+				1055B61A28C80BCE00321EFD /* Wholesaler.m */,
+				1055B61C28C80BEF00321EFD /* ReturnRequest.h */,
+				1055B61D28C80BEF00321EFD /* ReturnRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -136,6 +171,8 @@
 		10B9306E28C6CBF30076E462 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1055B62228C815D300321EFD /* ReturnRequestsTableViewCell.h */,
+				1055B62328C815D300321EFD /* ReturnRequestsTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +186,14 @@
 				1055B60E28C7F11000321EFD /* PharmaciesViewController.m */,
 				1055B61028C7F71100321EFD /* FirstViewController.h */,
 				1055B61128C7F71100321EFD /* FirstViewController.m */,
+				1055B61F28C80D9E00321EFD /* ReturnRequestsViewController.h */,
+				1055B62028C80D9E00321EFD /* ReturnRequestsViewController.m */,
+				1055B62828C81DFE00321EFD /* ItemsTableViewController.h */,
+				1055B62928C81DFE00321EFD /* ItemsTableViewController.m */,
+				1055B62B28C820F500321EFD /* CreateReturnRequestViewController.h */,
+				1055B62C28C820F500321EFD /* CreateReturnRequestViewController.m */,
+				1055B62E28C8215400321EFD /* AddItemViewController.h */,
+				1055B62F28C8215400321EFD /* AddItemViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,14 +340,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1055B61528C80AB900321EFD /* Pharmacy.m in Sources */,
 				10B9306528C6CB440076E462 /* main.m in Sources */,
+				1055B62128C80D9E00321EFD /* ReturnRequestsViewController.m in Sources */,
 				1055B61228C7F71100321EFD /* FirstViewController.m in Sources */,
 				1055B60F28C7F11000321EFD /* PharmaciesViewController.m in Sources */,
 				10B9305128C6CB420076E462 /* AppDelegate.m in Sources */,
 				10B9307728C6D8430076E462 /* LoginViewController.m in Sources */,
+				1055B62428C815D300321EFD /* ReturnRequestsTableViewCell.m in Sources */,
 				10B9307428C6D66A0076E462 /* PharmacyHttpClient.m in Sources */,
+				1055B61828C80B7A00321EFD /* Item.m in Sources */,
 				10B9305D28C6CB420076E462 /* Pharmacy.xcdatamodeld in Sources */,
+				1055B61B28C80BCE00321EFD /* Wholesaler.m in Sources */,
 				10B9305428C6CB420076E462 /* SceneDelegate.m in Sources */,
+				1055B63028C8215400321EFD /* AddItemViewController.m in Sources */,
+				1055B62D28C820F500321EFD /* CreateReturnRequestViewController.m in Sources */,
+				1055B61E28C80BEF00321EFD /* ReturnRequest.m in Sources */,
+				1055B62A28C81DFE00321EFD /* ItemsTableViewController.m in Sources */,
 				10B9307C28C6DC760076E462 /* PharmacyAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9HZ35W2BL;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = Pharmacy/Pharmacy.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pharmacy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -479,7 +533,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S9HZ35W2BL;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = Pharmacy/Pharmacy.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pharmacy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
