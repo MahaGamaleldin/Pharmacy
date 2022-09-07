@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="2707.2463768115945" y="107.8125"/>
         </scene>
-        <!--Create Return Request View Controller-->
+        <!--Create Return Request-->
         <scene sceneID="6lf-YE-BmW">
             <objects>
                 <viewController storyboardIdentifier="CreateReturnRequestViewController" id="0U7-GA-uXk" customClass="CreateReturnRequestViewController" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                         <viewLayoutGuide key="safeArea" id="Bft-BG-Vf2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6up-th-79C">
+                    <navigationItem key="navigationItem" title="Create Return Request" id="6up-th-79C">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fEw-EH-0hY">
                             <connections>
                                 <segue destination="uw9-gt-Q8h" kind="show" id="ugq-cb-FDJ"/>
@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="4367" y="-549"/>
         </scene>
-        <!--Return Requests View Controller-->
+        <!--Return Requests-->
         <scene sceneID="mcP-8a-cS7">
             <objects>
                 <viewController storyboardIdentifier="ReturnRequestsViewController" id="Ngs-WD-tMH" customClass="ReturnRequestsViewController" sceneMemberID="viewController">
@@ -296,7 +296,7 @@
                             <constraint firstItem="4Lp-xX-xzd" firstAttribute="bottom" secondItem="Idm-yu-9RT" secondAttribute="bottom" constant="20" id="zbo-Vc-4tP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="B4B-t6-ZXD">
+                    <navigationItem key="navigationItem" title="Return Requests" id="B4B-t6-ZXD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fC8-P0-5CM">
                             <connections>
                                 <action selector="tappedCreateReturnRequest:" destination="Ngs-WD-tMH" id="d0W-jZ-Vy3"/>
@@ -341,7 +341,7 @@
             </objects>
             <point key="canvasLocation" x="4367" y="108"/>
         </scene>
-        <!--Add Item View Controller-->
+        <!--Add Item-->
         <scene sceneID="1if-vN-1ar">
             <objects>
                 <viewController storyboardIdentifier="AddItemViewController" id="uw9-gt-Q8h" customClass="AddItemViewController" sceneMemberID="viewController">
@@ -599,7 +599,7 @@
                             <constraint firstAttribute="trailing" secondItem="4Qh-hL-Z8m" secondAttribute="trailing" constant="20" symbolic="YES" id="xMj-5n-soC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vh0-5B-GJe"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="vh0-5B-GJe"/>
                     <connections>
                         <outlet property="textFieldDosage" destination="v1c-P0-RTc" id="WgX-zi-RTX"/>
                         <outlet property="textFieldExpirationDate" destination="gZJ-dH-rWU" id="Zhm-m2-rYk"/>

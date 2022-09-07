@@ -9,11 +9,12 @@
 #import "ReturnRequest.h"
 #import "Wholesaler.h"
 #import "ReturnRequestsTableViewCell.h"
+#import "ItemsTableViewController.h"
 
 @interface ReturnRequestsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewReturnRequests;
-@property (strong, nonatomic) NSArray *returnRequests;
+@property (strong, nonatomic) NSMutableArray *returnRequests;
 
 @end
 
@@ -24,10 +25,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.returnRequests = [NSMutableArray new];
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [[PharmacyHttpClient sharedInstance] getReturnRequestsForPharmacy:self.pharmacy.pharmacyId withCompletion:^(id responseObject, NSString *errorMessage) {
+        if(responseObject) {
+            [self parseReturnRequests:responseObject];
+           
+        } else {
+            [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
+        }
+    }];
+}
+
+- (void) parseReturnRequests: (NSArray *)returnRequestsArray {
+    
+    for (NSDictionary *returnRequestDictionary in returnRequestsArray) {
+        ReturnRequest *returnRequest = [[ReturnRequest alloc] initWithDictionary:returnRequestDictionary];
+        [self.returnRequests addObject:returnRequest];
+    }
+    [self.tableViewReturnRequests reloadData];
+}
 /*
 #pragma mark - Navigation
 
@@ -45,8 +67,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    //return self.returnRequests.count;
-    return 10;
+    return self.returnRequests.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,19 +76,28 @@
     
     ReturnRequest *returnRequest = self.returnRequests[indexPath.row];
     cell.labelReturnRequestID.text = returnRequest.returnRequestId;
-    cell.labelStatus.text = returnRequest.status;
+    cell.labelStatus.text = returnRequest.returnRequestStatus;
     cell.labelServiceType.text = returnRequest.serviceType;
-    cell.labelNumberOfItems.text = returnRequest.numberOfItems;
+    cell.labelNumberOfItems.text = [NSString stringWithFormat:@"%d", returnRequest.numberOfItems.intValue];
     cell.labelCreatedAt.text = returnRequest.createdAt;
-    cell.labelAssociatedWholesaler.text = returnRequest.associatedWholesaler.wholesalerId;
-
+    cell.labelAssociatedWholesaler.text = returnRequest.wholesaler.name;
+    if (returnRequest.numberOfItems.intValue > 0) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ReturnRequest *returnRequest = self.returnRequests[indexPath.row];
-    // go to items screen
+    if (returnRequest.numberOfItems.intValue > 0) {
+        // go to items screen
+        ItemsTableViewController *itemsTableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemsTableViewController"];
+        itemsTableViewController.returnRequest = returnRequest;
+        [self.navigationController pushViewController:itemsTableViewController animated:YES];
+    }
 }
 
 @end

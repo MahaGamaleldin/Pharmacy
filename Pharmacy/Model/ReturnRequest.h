@@ -7,23 +7,26 @@
 
 #import <Foundation/Foundation.h>
 #import "Wholesaler.h"
+#import "Pharmacy.h"
 
 @interface ReturnRequest : NSObject
-/*
- ID
- ii. Created At
- iii. Number of Items(alias: Items)
- iv. Status
- v. Service Type
- vi. Associated Wholesaler
- */
 
 @property (nonatomic, strong) NSString *returnRequestId;
 @property (nonatomic, strong) NSString *createdAt;
-@property (nonatomic, strong) NSString *numberOfItems;
-@property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) NSString *updatedAt;
+@property (nonatomic, strong) NSString *dateDispatched;
+@property (nonatomic, strong) NSString *dateFulfilled;
+@property (nonatomic, strong) NSString *disbursements;
+@property (nonatomic, strong) NSString *serviceFee;
+@property (nonatomic, strong) NSString *returnRequestStatus;
+@property (nonatomic, strong) NSString *returnRequestStatusLabel;
 @property (nonatomic, strong) NSString *serviceType;
-@property (nonatomic, strong) Wholesaler *associatedWholesaler;
+@property (nonatomic, strong) NSString *preferredDate;
+@property (nonatomic, strong) Wholesaler *wholesaler;
+@property (nonatomic, strong) NSNumber *numberOfItems;
+@property (nonatomic, strong) NSString *numberOfReports;
+@property (nonatomic, strong) NSString *numberOfShipments;
+@property (nonatomic, strong) Pharmacy *pharmacy;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

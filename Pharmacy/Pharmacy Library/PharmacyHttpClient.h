@@ -28,6 +28,8 @@ typedef void(^PharmacyCompletionBlock)(id responseObject, NSString *errorMessage
 
 - (void) createReturnRequestWithserviceType: (NSString *) serviceType wholesalerId: (NSString *) wholesalerId andCompletion:(PharmacyCompletionBlock)completion;
 
+- (void) getReturnRequestsForPharmacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
+
 
 
 

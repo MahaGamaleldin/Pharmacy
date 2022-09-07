@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReturnRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ItemsTableViewController : UITableViewController
+
+@property(strong, nonatomic) ReturnRequest *returnRequest;
 
 @end
 

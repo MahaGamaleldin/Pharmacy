@@ -34,8 +34,6 @@
            
         } else {
             [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
-            printf("---error----");
-            NSLog(@"%@",errorMessage);
         }
     }];
     
