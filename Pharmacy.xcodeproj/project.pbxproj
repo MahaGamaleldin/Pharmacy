@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101ADDC628C93D21002430D9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 101ADDC528C93D21002430D9 /* User.m */; };
 		1055B60F28C7F11000321EFD /* PharmaciesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B60E28C7F11000321EFD /* PharmaciesViewController.m */; };
 		1055B61228C7F71100321EFD /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B61128C7F71100321EFD /* FirstViewController.m */; };
 		1055B61528C80AB900321EFD /* Pharmacy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1055B61428C80AB900321EFD /* Pharmacy.m */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		101ADDC428C93D21002430D9 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		101ADDC528C93D21002430D9 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		1055B60D28C7F11000321EFD /* PharmaciesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PharmaciesViewController.h; sourceTree = "<group>"; };
 		1055B60E28C7F11000321EFD /* PharmaciesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PharmaciesViewController.m; sourceTree = "<group>"; };
 		1055B61028C7F71100321EFD /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 				1055B61A28C80BCE00321EFD /* Wholesaler.m */,
 				1055B61C28C80BEF00321EFD /* ReturnRequest.h */,
 				1055B61D28C80BEF00321EFD /* ReturnRequest.m */,
+				101ADDC428C93D21002430D9 /* User.h */,
+				101ADDC528C93D21002430D9 /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				10B9305428C6CB420076E462 /* SceneDelegate.m in Sources */,
 				1055B63028C8215400321EFD /* AddItemViewController.m in Sources */,
 				1055B62D28C820F500321EFD /* CreateReturnRequestViewController.m in Sources */,
+				101ADDC628C93D21002430D9 /* User.m in Sources */,
 				1055B61E28C80BEF00321EFD /* ReturnRequest.m in Sources */,
 				1055B62A28C81DFE00321EFD /* ItemsTableViewController.m in Sources */,
 				10B9307C28C6DC760076E462 /* PharmacyAlert.m in Sources */,

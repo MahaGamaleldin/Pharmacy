@@ -14,7 +14,10 @@
     
     if (self)
     {
-        self.wholesalerId = dictionary[@"wholesalerId"];
+        self.wholesalerId = dictionary[@"id"];
+        self.createdAt = dictionary[@"createdAt"];
+        self.updatedAt = dictionary[@"updatedAt"];
+        self.name = dictionary[@"name"];
         
     }
     return self;

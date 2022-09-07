@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="1057.9710144927537" y="110.49107142857143"/>
         </scene>
-        <!--Pharmacies View Controller-->
+        <!--Pharmacies-->
         <scene sceneID="24a-dM-5oC">
             <objects>
                 <viewController storyboardIdentifier="PharmaciesViewController" id="ZvB-bR-A8b" customClass="PharmaciesViewController" sceneMemberID="viewController">
@@ -116,13 +116,7 @@
                         <viewLayoutGuide key="safeArea" id="7uG-f0-xy6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nEr-m5-fdl">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Vmj-Xw-59n">
-                            <connections>
-                                <segue destination="Ngs-WD-tMH" kind="show" id="q15-rr-Ycw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Pharmacies" id="nEr-m5-fdl"/>
                     <connections>
                         <outlet property="tableViewPharmacies" destination="ZX2-8p-37i" id="hL9-SN-COH"/>
                     </connections>
@@ -136,7 +130,7 @@
             <objects>
                 <viewController storyboardIdentifier="CreateReturnRequestViewController" id="0U7-GA-uXk" customClass="CreateReturnRequestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="buY-h9-tmd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Bft-BG-Vf2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -162,7 +156,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Lp-xX-xzd">
-                                <rect key="frame" x="20" y="108" width="374" height="774"/>
+                                <rect key="frame" x="20" y="64" width="374" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReturnRequestsTableViewCell" id="GhR-te-ePo" customClass="ReturnRequestsTableViewCell">
@@ -352,11 +346,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddItemViewController" id="uw9-gt-Q8h" customClass="AddItemViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jHS-22-jCg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryC-Cd-GDB" userLabel="Contents View">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="9mq-dx-swX">
                                         <rect key="frame" x="8" y="8" width="398" height="706"/>
@@ -580,7 +574,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-hL-Z8m">
-                                <rect key="frame" x="20" y="820" width="374" height="56"/>
+                                <rect key="frame" x="20" y="766" width="374" height="56"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="pe7-qu-Y2c"/>
