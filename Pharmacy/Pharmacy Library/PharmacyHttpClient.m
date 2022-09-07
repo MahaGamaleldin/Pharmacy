@@ -49,11 +49,15 @@ return _sharedObject;
 - (void) addUserTokenToSession {
     NSString *userLoginToken = [[NSUserDefaults standardUserDefaults] stringForKey:kUserLoginToken];
     if(userLoginToken != nil) {
-        [_sessionManager.requestSerializer setValue:userLoginToken forHTTPHeaderField:kHTTPHeaderAuthorizationkey];
-        NSLog(@"\n----added token: %@\n",userLoginToken);
+        [_sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        NSString *bearerToken = [NSString stringWithFormat:@"Bearer %@",userLoginToken];
+        [_sessionManager.requestSerializer setValue:bearerToken forHTTPHeaderField:kHTTPHeaderAuthorizationkey];
+       
+        
+        
+        NSLog(@"\n----bearerToken: %@\n",bearerToken);
     }
 }
-
 
 - (NSString *)getUrlForResource:(NSString *)resource {
     NSString *baseUrl = @"https://portal-test.rxmaxreturns.com/rxmax";
