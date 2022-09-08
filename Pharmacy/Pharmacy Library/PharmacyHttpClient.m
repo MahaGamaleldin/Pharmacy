@@ -188,5 +188,17 @@ return _sharedObject;
     
 }
 
+- (void) updateItem: (NSString *)itemId withParams: (NSDictionary *) params fromReturnRequest: (NSString *)returnRequestId ofPhamacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion {
+    
+    NSString *urlStr = [NSString stringWithFormat:@"/pharmacies/%@/returnrequests/%@/items/%@", pharmacyId, returnRequestId,itemId];
+    [self.sessionManager PUT:[self getUrlForResource:urlStr] parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSLog(@"---item: %@ updated---",itemId);
+        if (completion) completion(responseObject, nil);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completion) completion(nil, error.description);
+    }];
+}
 
 @end

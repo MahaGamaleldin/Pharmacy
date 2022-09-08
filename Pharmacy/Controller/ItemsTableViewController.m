@@ -32,6 +32,11 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self getItems];
+    
+}
+
+- (void) getItems {
     [[PharmacyHttpClient sharedInstance] getItemsForReturnRequests:self.returnRequest.returnRequestId andPharmacy:self.returnRequest.pharmacy.pharmacyId withCompletion:^(id responseObject, NSString *errorMessage) {
         if(responseObject) {
             [self parseItems:responseObject];
@@ -40,7 +45,6 @@
             [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
         }
     }];
-    
 }
 
 - (void) parseItems: (NSArray *)itemsArray {
@@ -106,11 +110,48 @@
             
         }];
         
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //edit
+    Item *item = self.items[indexPath.row];
+    [self showEditAlertWithItem:item];
+}
+
+- (void) showEditAlertWithItem: (Item *)item {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Edit Item" message:@"Add new Description" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Description";
+    }];
+    
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *itemNewDescription = [[alertController textFields][0] text];
+        NSLog(@"new description: %@", itemNewDescription);
+        [self updateItem:item withNewDescription:itemNewDescription];
+    }];
+    [alertController addAction:confirmAction];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Canelled");
+    }];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void) updateItem:(Item *) item withNewDescription: (NSString *) itemDescription {
+    [[PharmacyHttpClient sharedInstance] updateItem:item.itemId withParams:[item getItemAsDictionary] fromReturnRequest:self.returnRequest.returnRequestId ofPhamacy:self.returnRequest.pharmacy.pharmacyId withCompletion:^(id responseObject, NSString *errorMessage) {
+        
+        if(!errorMessage) {
+           // [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self getItems];
+           
+        } else {
+            [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
+        }
+        
+    }];
+}
 
 /*
 // Override to support rearranging the table view.

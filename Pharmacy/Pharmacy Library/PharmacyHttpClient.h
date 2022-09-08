@@ -40,5 +40,7 @@ andReturnRequest: (NSString *)returnRequestId withCompletion:(PharmacyCompletion
 
 - (void)deleteItem: (NSString *)itemId fromReturnRequest: (NSString *)returnRequestId ofPhamacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
 
+- (void) updateItem: (NSString *)itemId withParams: (NSDictionary *) params fromReturnRequest: (NSString *)returnRequestId ofPhamacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
+
 @end
 
