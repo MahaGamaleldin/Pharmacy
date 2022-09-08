@@ -10,6 +10,7 @@
 #import "Wholesaler.h"
 #import "ReturnRequestsTableViewCell.h"
 #import "ItemsTableViewController.h"
+#import "CreateReturnRequestViewController.h"
 
 @interface ReturnRequestsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -50,6 +51,10 @@
     }
     [self.tableViewReturnRequests reloadData];
 }
+
+- (IBAction)TappedCreateReturnRequest:(UIBarButtonItem *)sender {
+}
+
 /*
 #pragma mark - Navigation
 
@@ -62,6 +67,10 @@
 
 - (IBAction)tappedCreateReturnRequest:(UIBarButtonItem *)sender {
     printf("\ntappedCreateReturnRequest");
+    
+    CreateReturnRequestViewController *createReturnRequestViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateReturnRequestViewController"];
+    createReturnRequestViewController.pharmacy = self.pharmacy;
+    [self.navigationController pushViewController:createReturnRequestViewController animated:YES];
 }
 #pragma mark: UITableViewDataSource, UITableViewDelegate
 

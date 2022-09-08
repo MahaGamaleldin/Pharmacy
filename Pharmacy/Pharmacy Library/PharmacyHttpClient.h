@@ -32,6 +32,8 @@ typedef void(^PharmacyCompletionBlock)(id responseObject, NSString *errorMessage
 
 - (void) getItemsForReturnRequests:(NSString * )returnRequestId andPharmacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
 
+- (void) getWholesalersForPharmacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
+
 
 @end
 
