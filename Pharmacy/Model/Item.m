@@ -39,4 +39,18 @@
     return self;
 }
 
+- (NSDictionary *)getItemAsDictionary {
+    
+    NSDictionary *params = @{@"ndc": self.ndc,
+                             @"description": self.itemDescription,
+                             @"manufacturer": self.manufacturer,
+                             @"fullQuantity": self.fullQuantity,
+                             @"partialQuantity": self.partialQuantity,
+                             @"expirationDate": self.expirationDate,
+                             @"lotNumber": self.lotNumber
+                             
+    };
+    return params;
+}
+
 @end

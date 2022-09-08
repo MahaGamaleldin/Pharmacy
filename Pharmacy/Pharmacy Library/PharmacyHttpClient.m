@@ -160,4 +160,33 @@ return _sharedObject;
     
 }
 
+- (void) addItem: (NSDictionary *)itemDictionary toPharmacy: (NSString *)pharmacyId andReturnRequest: (NSString *)returnRequestId withCompletion:(PharmacyCompletionBlock)completion {
+    
+    NSString *urlStr = [NSString stringWithFormat:@"/pharmacies/%@/returnrequests/%@/items", pharmacyId, returnRequestId];
+    
+    [self.sessionManager POST: [self getUrlForResource:urlStr] parameters: itemDictionary success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        if (completion) completion(responseObject, nil);
+
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completion) completion(nil, error.description);
+    }];
+}
+
+- (void)deleteItem: (NSString *)itemId fromReturnRequest: (NSString *)returnRequestId ofPhamacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion {
+    
+    NSString *urlStr = [NSString stringWithFormat:@"/pharmacies/%@/returnrequests/%@/items/%@", pharmacyId, returnRequestId,itemId];
+    
+    [self.sessionManager DELETE:[self getUrlForResource:urlStr] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"---item: %@ deleted---",itemId);
+        if (completion) completion(responseObject, nil);
+
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completion) completion(nil, error.description);
+
+    }];
+    
+}
+
+
 @end

@@ -7,6 +7,7 @@
 
 #import "AddItemViewController.h"
 #import "Item.h"
+#import "ItemsTableViewController.h"
 
 @interface AddItemViewController ()
 
@@ -62,8 +63,21 @@
     self.item.lotNumber = self.textFieldLotNumber.text;
     
     // call end point
+    [self addItem];
     //on completion prompt add another or done-> items list
-    [self showAddOrDoneAlert];
+    
+}
+
+- (void)addItem {
+    
+    [[PharmacyHttpClient sharedInstance] addItem:[self.item getItemAsDictionary] toPharmacy:self.pharmacy.pharmacyId andReturnRequest:self.returnRequest.returnRequestId withCompletion:^(id responseObject, NSString *errorMessage) {
+        if(responseObject) {
+            [self showAddOrDoneAlert];
+           
+        } else {
+            [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
+        }
+    }];
 }
 
 - (void) showAddOrDoneAlert {
@@ -84,6 +98,9 @@
                                                       handler:^(UIAlertAction * action)
     {
         NSLog(@"go to items");
+        ItemsTableViewController *itemsTableViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ItemsTableViewController"];
+        itemsTableViewController.returnRequest = self.returnRequest;
+        [self.navigationController pushViewController:itemsTableViewController animated:YES];
     }];
 
     [alert addAction:addButton];

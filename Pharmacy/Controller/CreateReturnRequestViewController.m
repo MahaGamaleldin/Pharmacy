@@ -8,6 +8,7 @@
 #import "CreateReturnRequestViewController.h"
 #import "ReturnRequest.h"
 #import "Wholesaler.h"
+#import "AddItemViewController.h"
 
 @interface CreateReturnRequestViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -90,7 +91,16 @@
     
     [[PharmacyHttpClient sharedInstance] createReturnRequestForServiceType:self.selectedServiceType wholesalerId:self.selectedWholesaler.wholesalerId andPharmacyID:self.pharmacy.pharmacyId withCompletion:^(id responseObject, NSString *errorMessage) {
         if(responseObject) {
+            NSDictionary *returnRequestDictionary = [NSDictionary dictionaryWithObject:responseObject forKey:@"returnRequest"];
+            ReturnRequest *returnRequest = [[ReturnRequest alloc] initWithDictionary:returnRequestDictionary];
             printf("GO TO ADD ITEM");
+            NSLog(@"--%@", returnRequest.createdAt);
+            
+            AddItemViewController *addItemViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"AddItemViewController"];
+            addItemViewController.returnRequest = returnRequest;
+            addItemViewController.pharmacy = self.pharmacy;
+            [self.navigationController pushViewController:addItemViewController animated:YES];
+
            
         } else {
             [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];

@@ -206,13 +206,7 @@
                             <constraint firstItem="GOi-f9-LOG" firstAttribute="leading" secondItem="Bft-BG-Vf2" secondAttribute="leading" constant="20" id="yfB-4z-BCZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Return Request" id="6up-th-79C">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fEw-EH-0hY">
-                            <connections>
-                                <segue destination="uw9-gt-Q8h" kind="show" id="ugq-cb-FDJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Create Return Request" id="6up-th-79C"/>
                     <connections>
                         <outlet property="segmentedControlSelectServiceType" destination="GOi-f9-LOG" id="56S-fi-8aC"/>
                         <outlet property="tableViewWholesalers" destination="EkW-Cg-LA4" id="v22-ic-CFa"/>
@@ -496,11 +490,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddItemViewController" id="uw9-gt-Q8h" customClass="AddItemViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jHS-22-jCg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryC-Cd-GDB" userLabel="Contents View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="9mq-dx-swX">
                                         <rect key="frame" x="8" y="8" width="398" height="706"/>
@@ -724,7 +718,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-hL-Z8m">
-                                <rect key="frame" x="20" y="766" width="374" height="56"/>
+                                <rect key="frame" x="20" y="820" width="374" height="56"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="pe7-qu-Y2c"/>
