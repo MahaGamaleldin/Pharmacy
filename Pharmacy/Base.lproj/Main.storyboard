@@ -317,18 +317,94 @@
         <scene sceneID="nQe-gY-gSP">
             <objects>
                 <tableViewController storyboardIdentifier="ItemsTableViewController" id="bvj-6g-fkD" customClass="ItemsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3jo-YQ-S8e">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="240" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3jo-YQ-S8e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemsTableViewCell" id="pvm-3H-RkI">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemsTableViewCell" id="pvm-3H-RkI" customClass="ItemsTableViewCell">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="240"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pvm-3H-RkI" id="i45-Rg-fbR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NDC: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4M-NX-fez">
+                                            <rect key="frame" x="28" y="19" width="358" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqY-CY-KrX">
+                                            <rect key="frame" x="28" y="48" width="358" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufacturer: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEg-de-EXe">
+                                            <rect key="frame" x="28" y="77" width="358" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Quantity: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2r-6n-sCA">
+                                            <rect key="frame" x="28" y="106" width="358" height="21"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partial Quantity: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvP-mJ-84j">
+                                            <rect key="frame" x="28" y="135" width="358" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Date: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BX-Z0-ol9">
+                                            <rect key="frame" x="28" y="164" width="358" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lot Number: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZE-IN-N0W">
+                                            <rect key="frame" x="28" y="193" width="358" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="x4M-NX-fez" secondAttribute="trailing" constant="8" id="3dA-vL-PgY"/>
+                                        <constraint firstItem="s2r-6n-sCA" firstAttribute="top" secondItem="SEg-de-EXe" secondAttribute="bottom" constant="8" id="82U-cz-0HF"/>
+                                        <constraint firstItem="SEg-de-EXe" firstAttribute="top" secondItem="GqY-CY-KrX" secondAttribute="bottom" constant="8" id="CRj-zA-SQC"/>
+                                        <constraint firstItem="DvP-mJ-84j" firstAttribute="leading" secondItem="i45-Rg-fbR" secondAttribute="leadingMargin" constant="8" id="Cln-4K-roe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="s2r-6n-sCA" secondAttribute="trailing" constant="8" id="Hft-56-iM7"/>
+                                        <constraint firstItem="3BX-Z0-ol9" firstAttribute="top" secondItem="DvP-mJ-84j" secondAttribute="bottom" constant="8" id="LeM-0m-GyK"/>
+                                        <constraint firstItem="GqY-CY-KrX" firstAttribute="leading" secondItem="i45-Rg-fbR" secondAttribute="leadingMargin" constant="8" id="Odc-hl-GHk"/>
+                                        <constraint firstItem="x4M-NX-fez" firstAttribute="leading" secondItem="i45-Rg-fbR" secondAttribute="leadingMargin" constant="8" id="Q5K-fu-rkn"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DvP-mJ-84j" secondAttribute="trailing" constant="8" id="QcA-sr-pcv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="GqY-CY-KrX" secondAttribute="trailing" constant="8" id="UIK-1Q-n1g"/>
+                                        <constraint firstItem="SEg-de-EXe" firstAttribute="leading" secondItem="i45-Rg-fbR" secondAttribute="leadingMargin" constant="8" id="WCU-Hv-688"/>
+                                        <constraint firstItem="3BX-Z0-ol9" firstAttribute="leading" secondItem="i45-Rg-fbR" secondAttribute="leadingMargin" constant="8" id="Ykx-fp-3RK"/>
+                                        <constraint firstItem="DvP-mJ-84j" firstAttribute="top" secondItem="s2r-6n-sCA" secondAttribute="bottom" constant="8" id="bgw-nT-EiH"/>
+                                        <constraint firstItem="GqY-CY-KrX" firstAttribute="top" secondItem="x4M-NX-fez" secondAttribute="bottom" constant="8" id="ci7-9b-KOL"/>
+                                        <constraint firstItem="pZE-IN-N0W" firstAttribute="top" secondItem="3BX-Z0-ol9" secondAttribute="bottom" constant="8" id="mL5-cx-7uz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pZE-IN-N0W" secondAttribute="trailing" constant="8" id="oMp-FB-xrb"/>
+                                        <constraint firstItem="x4M-NX-fez" firstAttribute="top" secondItem="i45-Rg-fbR" secondAttribute="topMargin" constant="8" id="qiI-eU-DoX"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="3BX-Z0-ol9" secondAttribute="trailing" constant="8" id="tar-rz-bFv"/>
+                                        <constraint firstItem="pZE-IN-N0W" firstAttribute="leading" secondItem="i45-Rg-fbR" secondAttribute="leadingMargin" constant="8" id="uBG-GT-ujz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="SEg-de-EXe" secondAttribute="trailing" constant="8" id="vPE-eL-vqN"/>
+                                        <constraint firstItem="s2r-6n-sCA" firstAttribute="leading" secondItem="i45-Rg-fbR" secondAttribute="leadingMargin" constant="8" id="xx5-U4-lVa"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelDescription" destination="GqY-CY-KrX" id="3vD-U9-uXG"/>
+                                    <outlet property="labelExpirationDate" destination="3BX-Z0-ol9" id="g3e-Vs-yq6"/>
+                                    <outlet property="labelFullQuantity" destination="s2r-6n-sCA" id="qA6-LW-Edj"/>
+                                    <outlet property="labelLotNumber" destination="pZE-IN-N0W" id="lXd-5j-jf1"/>
+                                    <outlet property="labelManufacturer" destination="SEg-de-EXe" id="XpV-eh-U6m"/>
+                                    <outlet property="labelNDC" destination="x4M-NX-fez" id="Em5-ye-4ch"/>
+                                    <outlet property="labelPartialQuantity" destination="DvP-mJ-84j" id="lF0-MF-EDY"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

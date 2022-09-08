@@ -8,24 +8,7 @@
 #import "ReturnRequest.h"
 
 @implementation ReturnRequest
-/**
- {
-"returnRequest": {
 
-"updatedAt": "2022-08-07 06:10:52",
-
-"dateDispatched": null,
-"dateFulfilled": null,
-"disbursements": null,
-"serviceFee": null,
-"returnRequestStatusLabel": "Preparing in pharmacy",
-"preferredDate": "2022-08-19 12:00:00",
-
-
-"numberOfReports": 0,
-"numberOfShipments": 0
-},
- */
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     
@@ -41,19 +24,21 @@
         self.serviceFee = returnRequestDictionary[@"serviceFee"];
         self.returnRequestStatusLabel = returnRequestDictionary[@"returnRequestStatusLabel"];
         self.preferredDate = returnRequestDictionary[@"preferredDate"];
-        self.numberOfReports = dictionary[@"numberOfReports"];
         self.serviceType = returnRequestDictionary[@"serviceType"];
-        
+        self.returnRequestStatus = returnRequestDictionary[@"returnRequestStatus"];
+
         if (returnRequestDictionary[@"wholesaler"] != [NSNull null]) {
-            self.wholesaler = [[Wholesaler alloc] initWithDictionary:dictionary[@"wholesaler"]];
+            self.wholesaler = [[Wholesaler alloc] initWithDictionary:returnRequestDictionary[@"wholesaler"]];
         }
         if (returnRequestDictionary[@"pharmacy"] != [NSNull null]) {
-            self.pharmacy = [[Pharmacy alloc] initWithDictionary:dictionary[@"pharmacy"]];
+            self.pharmacy = [[Pharmacy alloc] initWithDictionary:returnRequestDictionary[@"pharmacy"]];
         }
         
+        self.numberOfReports = dictionary[@"numberOfReports"];
         self.numberOfShipments = dictionary[@"numberOfShipments"];
         self.numberOfItems = [NSNumber numberWithInt:[dictionary[@"numberOfItems"] intValue]];
-        self.returnRequestStatus = returnRequestDictionary[@"returnRequestStatus"];
+        
+        
         
     }
     

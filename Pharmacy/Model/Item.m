@@ -22,12 +22,20 @@
         self.name = dictionary[@"name"];
         self.strength = dictionary[@"strength"];
         self.dosage = dictionary[@"dosage"];
-        self.fullQuantity = dictionary[@"fullQuantity"];
+        self.fullQuantity = [NSString stringWithFormat:@"%@", dictionary[@"fullQuantity"]];
         self.partialQuantity = dictionary[@"partialQuantity"];
         self.expirationDate = dictionary[@"expirationDate"];
         self.status = dictionary[@"status"];
         self.lotNumber = dictionary[@"lotNumber"];
+       
+        self.itemId = dictionary[@"id"];
+        self.createdAt = dictionary[@"createdAt"];
+        self.updatedAt = dictionary[@"updatedAt"];
+        self.expectedReturnValue = dictionary[@"expectedReturnValue"];
+        self.actualReturnValue = dictionary[@"actualReturnValue"];
+        self.adminComment = dictionary[@"adminComment"];
     }
+    
     return self;
 }
 

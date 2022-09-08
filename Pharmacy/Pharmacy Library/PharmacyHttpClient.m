@@ -103,9 +103,22 @@ return _sharedObject;
 - (void) getReturnRequestsForPharmacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion {
     
     NSString *urlStr = [NSString stringWithFormat:@"/pharmacies/%@/returnrequests", pharmacyId];
+ 
+    [self.sessionManager GET:[self getUrlForResource:urlStr] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+
+        if (completion) completion(responseObject, nil);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completion) completion(nil, error.description);
+    }];
+}
+
+- (void) getItemsForReturnRequests:(NSString * )returnRequestId andPharmacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion {
+    
+    NSString *urlStr = [NSString stringWithFormat:@"/pharmacies/%@/returnrequests/%@/items", pharmacyId, returnRequestId];
     NSLog(@"\n--url: %@--\n", urlStr);
     [self.sessionManager GET:[self getUrlForResource:urlStr] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        printf("\n----returnrequests----\n");
+        printf("\n----Items----\n");
         NSLog(@"%@",responseObject);
         printf("\n----------------------------------\n");
         if (completion) completion(responseObject, nil);
