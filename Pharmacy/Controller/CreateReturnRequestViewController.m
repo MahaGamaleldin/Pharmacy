@@ -27,6 +27,7 @@
     // Do any additional setup after loading the view.
     
     self.wholesalers = [NSMutableArray new];
+    self.selectedServiceType = @"EXPRESS_SERVICE";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,8 +57,23 @@
 */
 - (IBAction)tappedSubmit:(UIButton *)sender {
     
-    NSLog(@"\n--selectedWholesaler: %@ -- index: %ld---",self.selectedWholesaler.name, self.segmentedControlSelectServiceType.selectedSegmentIndex);
-    [self submitReturnRequest];
+    switch (self.segmentedControlSelectServiceType.selectedSegmentIndex) {
+        case 1:
+            self.selectedServiceType = @"FULL_SERVICE";
+            break;
+            
+        default:
+            self.selectedServiceType = @"EXPRESS_SERVICE";
+            break;
+    }
+    if (self.selectedWholesaler == nil) {
+        [PharmacyAlert showErrorWithMessage:@"Select Wholesaler!" fromViewController:self];
+    }
+    else {
+        [self submitReturnRequest];
+    }
+    NSLog(@"\n--selectedWholesaler: %@ -- self.selectedServiceType: %@---",self.selectedWholesaler.name, self.selectedServiceType);
+    
     
 }
 
@@ -72,6 +88,14 @@
 
 - (void) submitReturnRequest {
     
+    [[PharmacyHttpClient sharedInstance] createReturnRequestForServiceType:self.selectedServiceType wholesalerId:self.selectedWholesaler.wholesalerId andPharmacyID:self.pharmacy.pharmacyId withCompletion:^(id responseObject, NSString *errorMessage) {
+        if(responseObject) {
+            printf("GO TO ADD ITEM");
+           
+        } else {
+            [PharmacyAlert showErrorWithMessage:errorMessage fromViewController:self];
+        }
+    }];
 }
 
 #pragma mark: UITableViewDataSource, UITableViewDelegate

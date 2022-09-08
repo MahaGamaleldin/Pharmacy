@@ -88,12 +88,9 @@ return _sharedObject;
 
 -(void)getAllPharmaciesWithCompletion:(PharmacyCompletionBlock)completion {
     [self.sessionManager GET:[self getUrlForResource:@"/pharmacies"] parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        printf("\n----pharmacies----\n");
-        NSLog(@"%@",responseObject);
-        printf("\n----------------------------------\n");
+        
         if (completion) completion(responseObject, nil);
 
-        
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
         if (completion) completion(nil, error.description);
@@ -144,5 +141,23 @@ return _sharedObject;
     }];
 }
 
+- (void) createReturnRequestForServiceType: (NSString *) serviceType
+                              wholesalerId: (NSString *) wholesalerId
+                              andPharmacyID: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion {
+    
+    NSString *urlStr = [NSString stringWithFormat:@"/pharmacies/%@/returnrequests", pharmacyId];
+    
+    NSDictionary *params = @{@"serviceType": serviceType,
+                             @"wholesalerId": wholesalerId};
+    
+    [self.sessionManager POST: [self getUrlForResource:urlStr] parameters: params success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        if (completion) completion(responseObject, nil);
+
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        if (completion) completion(nil, error.description);
+    }];
+    
+}
 
 @end

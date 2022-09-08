@@ -24,16 +24,14 @@ typedef void(^PharmacyCompletionBlock)(id responseObject, NSString *errorMessage
 
 - (void) getAllPharmaciesWithCompletion:(PharmacyCompletionBlock)completion;
 
-- (void) getWholesalersForPharmacy: (NSString *) pharmacyId andCompletion:(PharmacyCompletionBlock)completion;
-
-- (void) createReturnRequestWithserviceType: (NSString *) serviceType wholesalerId: (NSString *) wholesalerId andCompletion:(PharmacyCompletionBlock)completion;
-
 - (void) getReturnRequestsForPharmacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
 
 - (void) getItemsForReturnRequests:(NSString * )returnRequestId andPharmacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
 
 - (void) getWholesalersForPharmacy: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
 
-
+- (void) createReturnRequestForServiceType: (NSString *) serviceType
+                              wholesalerId: (NSString *) wholesalerId
+                             andPharmacyID: (NSString *) pharmacyId withCompletion:(PharmacyCompletionBlock)completion;
 @end
 
